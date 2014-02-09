@@ -26,5 +26,20 @@ namespace WpfApplication1
             InitializeComponent();
         }
         public DeviceDetailsViewModel ViewModel { get; set; }
+
+        private void CardClick(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectedViewModel = new CardViewModel("Card-2");
+        }
+
+        private void RackClick(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectedViewModel = new RackViewModel("Rack-2");
+        }
+
+        private void BoxClick(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SelectedViewModel = new BoxViewModel("Box-2");
+        }
     }
 }

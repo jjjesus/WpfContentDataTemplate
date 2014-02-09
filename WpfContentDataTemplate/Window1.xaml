@@ -20,7 +20,7 @@
             </StackPanel>
         </DataTemplate>
         <!-- DataTemplate Selector -->
-        <viewmodel:MyDataTemplateSelector x:Key="templateSelector"
+        <viewmodel:MyDataTemplateSelector x:Key="MyDataTemplateSelector"
                     RackDataTemplate="{StaticResource RackDataTemplate}"
                     BoxDataTemplate="{StaticResource BoxDataTemplate}" 
                     CardDataTemplate="{StaticResource CardDataTemplate}"/>
@@ -30,8 +30,12 @@
         <StackPanel Background="Aqua" DataContext="{Binding SelectedViewModel}">
         -->
         <StackPanel Background="Aqua">
-            <ContentControl Content="{Binding SelectedViewModel}"
-                    ContentTemplateSelector="{StaticResource templateSelector}" />
+            <Button Click="RackClick">Rack</Button>
+            <Button Click="BoxClick">Box</Button>
+            <Button Click="CardClick">Card</Button>
+            
+            <ContentPresenter Content="{Binding SelectedViewModel}" ContentTemplateSelector="{StaticResource MyDataTemplateSelector}"></ContentPresenter>
+            
         </StackPanel>
     </ScrollViewer>
 </Window>
